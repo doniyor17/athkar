@@ -7,6 +7,10 @@ const RootLayout = () => {
         name="index"
         options={{ headerShown: false }}
       />
+      <Stack.Screen
+        name="(modal)/playAthkar"
+        options={{ headerShown: false, presentation: "modal" }}
+      />
     </Stack>
   );
 };

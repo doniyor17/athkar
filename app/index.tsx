@@ -1,9 +1,9 @@
-import { View, Text, Pressable, ImageBackground } from "react-native";
+import { View } from "react-native";
+import { router } from "expo-router";
 
 import AppGradient from "@/components/AppGradient";
 import Card from "@/components/Card";
 
-import AntDesign from "@expo/vector-icons/AntDesign";
 import IMAGES from "@/constants/BgImages";
 import Colors from "@/constants/Colors";
 export default function RootLayout() {
@@ -12,7 +12,7 @@ export default function RootLayout() {
   };
 
   const morningBtnPress = () => {
-    console.log("Pressed morning play button");
+    router.push("/(modal)/playAthkar");
   };
 
   const eveningCardPress = () => {
@@ -20,7 +20,7 @@ export default function RootLayout() {
   };
 
   const eveningBtnPress = () => {
-    console.log("Pressed evening play button");
+    router.push("/(modal)/playAthkar");
   };
 
   return (
