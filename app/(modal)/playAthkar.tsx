@@ -1,35 +1,48 @@
-import { Text, FlatList } from "react-native";
+import { Text, FlatList, View } from "react-native";
 
 import AppGradient from "@/components/AppGradient";
 import BackButton from "@/components/BackButton";
 
 import Colors from "@/constants/Colors";
 
+import ATHKAR from "@/constants/athkar";
+
 const PlayAthkarModal = () => {
   return (
-    <AppGradient colors={[Colors.greeny, Colors.primary]}>
+    <AppGradient colors={[Colors.primary, Colors.greeny, Colors.primary]}>
       <BackButton />
       <FlatList
         className="pt-3 mt-3"
-        data={[1, 2, 3, 4]}
-        keyExtractor={item => item.toString()}
+        data={ATHKAR.uz.data}
+        keyExtractor={item => item.id.toString()}
         showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
-          <Text className="text-4xl font-semibold text-white mb-2">
-            {item + " ."} Lorem ipsum dolor sit amet consectetur adipisicing
-            elit. Iure explicabo in, incidunt velit corrupti error, nesciunt non
-            reiciendis iusto animi minus debitis fugit alias quas nihil eius
-            rem, minima ducimus repellat blanditiis laboriosam. Iste ea qui
-            recusandae. Labore, aspernatur deserunt repellendus aliquid ea sint
-            unde incidunt necessitatibus, pariatur consequuntur laboriosam
-            aperiam quos exercitationem minus facilis omnis? Suscipit culpa
-            quaerat nam cupiditate facilis eaque nemo excepturi officia adipisci
-            nostrum ipsam iusto illo aperiam aliquam nihil vitae quas voluptatem
-            quasi consectetur, ducimus voluptas! Saepe quidem harum natus
-            numquam animi eum repudiandae, assumenda minima perferendis vitae
-            facere, reiciendis voluptatem fugiat. Deleniti, consequuntur
-            sapiente.
-          </Text>
+          <View
+            style={{
+              shadowColor: Colors.dark,
+              shadowOpacity: 30,
+              shadowRadius: 10
+            }}
+            className="mb-4 border-2 border-transparent p-4"
+          >
+            <Text className="text-xl font-normal text-white mb-1">
+              {item.textAr}
+            </Text>
+            <Text className="text-xl text-white mb-2 font-semibold">
+              {item.text}
+            </Text>
+            {item.meaning && (
+              <Text className="text-base text-white mb-2">{item.meaning}</Text>
+            )}
+            {item.description && (
+              <Text className="text-lg text-white italic">
+                {item.description}
+              </Text>
+            )}
+            {item.origin && (
+              <Text className="text-lg text-white italic">{item.origin}</Text>
+            )}
+          </View>
         )}
       />
     </AppGradient>
