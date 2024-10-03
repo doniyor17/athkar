@@ -12,7 +12,10 @@ export default function RootLayout() {
   };
 
   const morningBtnPress = () => {
-    router.push("/(modal)/playAthkar");
+    router.push({
+      pathname: "/(modal)/playAthkar",
+      params: { type: "morning" }
+    });
   };
 
   const eveningCardPress = () => {
@@ -20,7 +23,10 @@ export default function RootLayout() {
   };
 
   const eveningBtnPress = () => {
-    router.push("/(modal)/playAthkar");
+    router.push({
+      pathname: "/(modal)/playAthkar",
+      params: { type: "evening" }
+    });
   };
 
   return (

@@ -1,4 +1,4 @@
-interface AthkarData {
+export interface AthkarData {
   id: number | string;
   title?: string;
   textAr: string;
@@ -8,8 +8,11 @@ interface AthkarData {
   meaning?: string;
   origin?: string;
   description?: string;
+  orderMorning?: number;
+  orderEvening?: number;
+  for?: "morning" | "evening" | "both";
 }
-interface Athkar {
+export interface Athkar {
   uz: {
     data: AthkarData[];
   };
@@ -20,5 +23,3 @@ interface Athkar {
     data: AthkarData[];
   };
 }
-
-export default Athkar;
