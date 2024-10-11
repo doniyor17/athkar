@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { Text, FlatList, Platform, Pressable } from "react-native";
-import { router } from "expo-router";
+import { Href, router } from "expo-router";
 
 import AppGradient from "@/components/AppGradient";
 import BackButton from "@/components/BackButton";
@@ -8,14 +8,13 @@ import BackButton from "@/components/BackButton";
 import { AthkarData } from "@/models/interface";
 import Colors from "@/constants/Colors";
 import ATHKAR from "@/constants/athkar";
-("@/constants/athkar");
 
 const Zikr = () => {
   const slicer = (word: string) => {
     return word.slice(0, 35) + "...";
   };
   const onClickAzkar = (id: number | string) => () => {
-    router.push("/zikr/" + String(id));
+    router.push(("/zikr/" + String(id)) as Href<string>);
   };
   const [data, setData] = useState<AthkarData[]>([]);
 
