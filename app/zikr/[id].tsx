@@ -21,8 +21,10 @@ const SingleZikr = () => {
     <AppGradient colors={[Colors.greeny, Colors.primary]}>
       <BackButton />
       <ScrollView
-        className="pt-4"
-        style={Platform.OS === "android" && { marginTop: 20 }}
+        className="pt-4 pb-3"
+        style={
+          Platform.OS === "android" ? { marginTop: 20 } : { marginBottom: -20 }
+        }
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
       >
@@ -58,7 +60,7 @@ const SingleZikr = () => {
           Қайтарилиши: {zikr?.repetance + " марта"}
         </Text>
         <Text
-          className="text-xl text-white mb-2 italic"
+          className="text-xl text-white italic pb-10"
           style={Platform.OS === "android" && { fontSize: 14 }}
         >
           {zikr?.origin}

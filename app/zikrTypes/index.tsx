@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { AthkarData } from "@/models/interface";
 import { useLocalSearchParams } from "expo-router";
 
 import AppGradient from "@/components/AppGradient";
@@ -8,9 +9,7 @@ import ShowZikr from "@/components/ShowZikr";
 import Colors from "@/constants/Colors";
 import ATHKAR from "@/constants/athkar";
 
-import { AthkarData } from "@/models/interface";
-
-const PlayAthkarModal = () => {
+const ZikrTypes = () => {
   const { type } = useLocalSearchParams();
 
   const [data, setData] = useState<AthkarData[]>([]);
@@ -39,4 +38,4 @@ const PlayAthkarModal = () => {
   );
 };
 
-export default PlayAthkarModal;
+export default ZikrTypes;
