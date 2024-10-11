@@ -26,7 +26,9 @@ const Zikr = () => {
       <BackButton />
       <FlatList
         className="pt-1"
-        style={Platform.OS === "android" && { marginTop: 20 }}
+        style={
+          Platform.OS === "android" ? { marginTop: 20 } : { marginBottom: -40 }
+        }
         data={data}
         keyExtractor={item => item.id.toString()}
         showsVerticalScrollIndicator={false}

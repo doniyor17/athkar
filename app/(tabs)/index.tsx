@@ -8,7 +8,7 @@ import IMAGES from "@/constants/BgImages";
 import Colors from "@/constants/Colors";
 export default function RootLayout() {
   const onMorningCardPress = () => {
-    console.log("Pressed Morning Card");
+    router.push({ pathname: "/zikrTypes", params: { type: "morning" } });
   };
 
   const morningBtnPress = () => {
@@ -19,7 +19,7 @@ export default function RootLayout() {
   };
 
   const eveningCardPress = () => {
-    console.log("Pressed Evening Card");
+    router.push({ pathname: "/zikrTypes", params: { type: "evening" } });
   };
 
   const eveningBtnPress = () => {
